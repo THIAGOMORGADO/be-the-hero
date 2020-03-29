@@ -55,7 +55,7 @@ export default function Profile(){
                     <FiPower size={18} color="#e02047" />
                 </button> 
             </header>
-            <h1>Casos cadastrados</h1>
+            <h1>Casos cadastrados abaixo:</h1>
             <ul>
                {incidents.map(incident => (
                   <li key={incident.Id}>
