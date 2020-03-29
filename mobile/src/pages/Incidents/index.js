@@ -54,42 +54,43 @@ export default function Incidents(){
                 Total <Text style={styles.headerTextBold}>{totalItems} Casos</Text>
                 </Text>
             </View>
-            <View>
-                <Text style={styles.title}>Bem-Vindo ! </Text>
-                <Text style={styles.description}>
-                    Escolha um dos casos abaixo e salve o dia.
-                </Text>
+            
+            <Text style={styles.title}>Bem-Vindo ! </Text>
+            <Text style={styles.description}>
+                Escolha um dos casos abaixo e salve o dia.
+            </Text>
 
-                <FlatList 
-                style={styles.incidentsList}
-                keyExtractor={incident => String(incident.id)}
-                //showsVerticalScrollIndicator={false}
-                onEndReached={loadIncidents}
-                onEndReachedThreshold={0.2}
-                data={incidents}
-                renderItem={({item: incident}) => (
-                    <View style={styles.incident}>
-                    <Text style={styles.incidentProper}>ONG:</Text>
-                    <Text style={styles.incidentValue}>{incident.name}</Text>
+            <FlatList 
+            style={styles.incidentsList}
+            keyExtractor={incident => String(incident.id)}
+            //showsVerticalScrollIndicator={false}
+            onEndReached={loadIncidents}
+            onEndReachedThreshold={0.2}
+            data={incidents}
+            renderItem={({item: incident}) => (
+                <View style={styles.incident}>
+                <Text style={styles.incidentProper}>ONG:</Text>
+                <Text style={styles.incidentValue}>{incident.name}</Text>
 
-                    <Text style={styles.incidentProper}>CASO:</Text>
-                    <Text style={styles.incidentValue}>{incident.title}</Text>
+                <Text style={styles.incidentProper}>CASO:</Text>
+                <Text style={styles.incidentValue}>{incident.title}</Text>
 
-                    <Text style={styles.incidentProper}>Valor:</Text>
-                    <Text style={styles.incidentValue}>
-                        {Intl.NumberFormat('pt-br', {style:'currency', currency:'BRL'}).format(incident.value)}</Text>
+                <Text style={styles.incidentProper}>Valor:</Text>
+                <Text style={styles.incidentValue}>
+                    {Intl.NumberFormat('pt-br', {style:'currency', currency:'BRL'}).format(incident.value)}</Text>
 
-                    <TouchableOpacity 
-                    style={styles.detailsButton} 
-                        onPress={() => navigationDetail(incident)}>
-                            <Text style={styles.detailsButtonText}>Ver mais detalhes...</Text>
-                            <Feather name="arrow-right" size={16} color="#e02041"/>
-                        </TouchableOpacity>
-                    </View>
-                )}
-                />
-            </View>
+                <TouchableOpacity 
+                style={styles.detailsButton} 
+                    onPress={() => navigationDetail(incident)}>
+                        <Text style={styles.detailsButtonText}>Ver mais detalhes...</Text>
+                        <Feather name="arrow-right" size={16} color="#e02041"/>
+                    </TouchableOpacity>
+                </View>
+            )}
+            />
             
         </View>
     );
 }
+
+//pronto ve ai
